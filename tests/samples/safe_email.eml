@@ -1,0 +1,21 @@
+From: GitHub <noreply@github.com>
+To: user@example.com
+Subject: [GitHub] Security Alert: New SSH key added to your account
+Date: Mon, 06 Jul 2026 12:00:00 -0400
+Message-ID: <github-ssh-alert-1234567@github.com>
+Content-Type: text/html; charset="UTF-8"
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>GitHub Security Alert</title>
+</head>
+<body>
+<p>Hey user,</p>
+<p>We wanted to let you know that a new SSH public key was added to your GitHub account.</p>
+<p>If this was you, you don't need to take any action.</p>
+<p>If you don't recognize this key, please review your SSH keys in your settings immediately:</p>
+<p><a href="https://github.com/settings/keys">Review SSH Keys</a></p>
+<p>Thanks,<br>The GitHub Team</p>
+</body>
+</html>

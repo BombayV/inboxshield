@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InboxShield Dashboard</title>
+    <!-- Use Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+    
+    <div class="container">
+        <header class="glass-header">
+            <div class="logo">
+                <span class="shield-icon">🛡️</span> InboxShield
+            </div>
+            <div class="subtitle">Automated Threat Triage & Security Agent</div>
+        </header>
+
+        <section class="metrics-grid" id="metrics-grid">
+            <!-- Metrics injected via JS -->
+            <div class="metric-card glass-card">
+                <h3>Total Analyzed</h3>
+                <div class="metric-value" id="metric-total">--</div>
+            </div>
+            <div class="metric-card glass-card safe-card">
+                <h3>Safe</h3>
+                <div class="metric-value" id="metric-safe">--</div>
+            </div>
+            <div class="metric-card glass-card suspicious-card">
+                <h3>Suspicious</h3>
+                <div class="metric-value" id="metric-suspicious">--</div>
+            </div>
+            <div class="metric-card glass-card phishing-card">
+                <h3>Phishing</h3>
+                <div class="metric-value" id="metric-phishing">--</div>
+            </div>
+        </section>
+
+        <section class="recent-emails glass-card">
+            <div class="section-header">
+                <h2>Recent Scans</h2>
+                <button class="refresh-btn" id="refresh-btn">Refresh</button>
+            </div>
+            <div class="table-container">
+                <table id="emails-table">
+                    <thead>
+                        <tr>
+                            <th>Processed Date</th>
+                            <th>Sender</th>
+                            <th>Subject</th>
+                            <th>Threat Score</th>
+                            <th>Verdict</th>
+                        </tr>
+                    </thead>
+                    <tbody id="emails-tbody">
+                        <!-- Populated by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <!-- Modal for details -->
+    <div class="modal-overlay" id="detail-modal">
+        <div class="modal-content glass-card">
+            <button class="close-btn" id="close-modal">&times;</button>
+            <div class="modal-header">
+                <h2 id="modal-subject">Subject</h2>
+                <div id="modal-verdict-badge" class="badge">Verdict</div>
+            </div>
+            <div class="modal-body">
+                <div class="detail-section">
+                    <h3>Metadata</h3>
+                    <p><strong>From:</strong> <span id="modal-sender"></span></p>
+                    <p><strong>Date:</strong> <span id="modal-date"></span></p>
+                    <p><strong>Threat Score:</strong> <span id="modal-score"></span>/100</p>
+                </div>
+                
+                <div class="detail-section">
+                    <h3>Agent Analysis Summary</h3>
+                    <div class="log-box" id="modal-summary"></div>
+                </div>
+
+                <div class="detail-section">
+                    <h3>URL Diagnostics</h3>
+                    <div class="table-container">
+                        <table class="url-table">
+                            <thead>
+                                <tr>
+                                    <th>Domain</th>
+                                    <th>VT Malicious</th>
+                                    <th>Verdict</th>
+                                </tr>
+                            </thead>
+                            <tbody id="modal-urls-tbody"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="detail-section">
+                    <h3>Agent Action Logs</h3>
+                    <div class="logs-container" id="modal-logs-container">
+                        <!-- Logs here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

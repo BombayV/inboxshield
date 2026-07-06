@@ -1,0 +1,22 @@
+From: Netflix Security <support@netflix-security-alert-billing.com>
+To: user@example.com
+Subject: URGENT: Account Suspension - Update Billing Details Immediately
+Date: Mon, 06 Jul 2026 12:05:00 -0400
+Message-ID: <netflix-billing-alert-998877@netflix.com>
+Content-Type: text/html; charset="UTF-8"
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Account Suspended</title>
+</head>
+<body>
+<p>Dear Customer,</p>
+<p>We were unable to process your monthly subscription payment. As a result, your Netflix account has been temporarily suspended.</p>
+<p>To restore service, you must verify your identity and update your payment information within 24 hours, otherwise your account will be permanently closed.</p>
+<p>Please click the link below to resolve this issue:</p>
+<p><strong><a href="http://netflix-security-alert-billing.com/verify-account">Verify Netflix Subscription Details</a></strong></p>
+<p>Note: Failure to update details will result in suspension of all streaming profiles.</p>
+<p>Netflix Security Team</p>
+</body>
+</html>
